@@ -2,10 +2,10 @@ import Student from '../models/student.model';
 import Dean from '../models/dean.model';
 
 export const studentAuthentication = async function (req, res, next) {
-  const token = req.headers.authorization.replace('Bearer ', '');
+  const token = req.headers?.authorization?.replace('Bearer ', '') ?? null;
   if (!token) {
     res.status(401).send({
-      message: 'Access denied',
+      message: 'Access denied. No Authentication token',
       success: false,
     });
   } else {
@@ -25,10 +25,10 @@ export const studentAuthentication = async function (req, res, next) {
 };
 
 export const deanAuthentication = async function (req, res, next) {
-  const token = req.headers.authorization.replace('Bearer ', '');
+  const token = req.headers?.authorization?.replace('Bearer ', '') ?? null;
   if (!token) {
     res.status(401).send({
-      message: 'Access denied',
+      message: 'Access denied. No Authentication token',
       success: false,
     });
   } else {
