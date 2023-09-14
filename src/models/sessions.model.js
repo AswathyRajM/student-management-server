@@ -1,26 +1,30 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../../config/database';
 
-class Student extends Model {}
+class Sessions extends Model {}
 
-Student.init(
+Sessions.init(
   {
     id: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true,
     },
-    password: {
+    dean_id: {
       type: DataTypes.STRING(30),
     },
-    token: {
+    student_id: {
       type: DataTypes.STRING(40),
+    },
+    availableDateTime: {
+      type: DataTypes.DATE,
     },
   },
   {
     sequelize,
-    modelName: 'student_login',
+    modelName: 'sessions',
     freezeTableName: true,
   }
 );
 
-export default Student;
+export default Sessions;

@@ -1,14 +1,9 @@
-// const express = require('express');
-// const router = express.Router();
-// const deanController = require('../controllers/deanController');
-// const authMiddleware = require('../utils/auth');
+import express from 'express';
+import DeanController from '../controllers/dean.controller';
 
-// router.post('/login', deanController.login);
+const router = express.Router();
 
-// router.get(
-//   '/pending-sessions',
-//   authMiddleware.verifyToken,
-//   deanController.getPendingSessions
-// );
+router.post('/login', DeanController.login);
+router.get('/sessions/upcoming', DeanController.upcomingSessions);
 
-// module.exports = router;
+export { router };
