@@ -1,21 +1,20 @@
 import sequelize from '../../config/database';
 import { Model, DataTypes } from 'sequelize';
+import Sessions from './sessions.model';
 
-class Dean extends Model {
-  // static async
-}
+class Dean extends Model {}
 
 Dean.init(
   {
     id: {
-      type: DataTypes.STRING(10),
+      type: DataTypes.STRING,
       primaryKey: true,
     },
     password: {
-      type: DataTypes.STRING(30),
+      type: DataTypes.STRING,
     },
     token: {
-      type: DataTypes.STRING(40),
+      type: DataTypes.STRING,
     },
   },
   {
@@ -24,9 +23,5 @@ Dean.init(
     freezeTableName: true,
   }
 );
+
 export default Dean;
-// class BikeType extends Model {
-//   static async addNewBikeType(bikeType) {
-//     return BikeType.create(bikeType);
-//   }
-// }

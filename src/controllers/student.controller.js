@@ -2,6 +2,7 @@ import Student from '../models/student.model';
 import Sessions from '../models/sessions.model';
 import { v4 as uuidv4 } from 'uuid';
 import moment from 'moment';
+import Dean from '../models/dean.model';
 
 class StudentContoller {
   static login = async (req, res) => {
@@ -66,7 +67,7 @@ class StudentContoller {
     try {
       await Sessions.update(
         {
-          student_id: req.body.student_id,
+          student_id: req.user.id,
         },
         {
           where: {
