@@ -7,10 +7,6 @@ import Dean from '../models/dean.model';
 class StudentContoller {
   static login = async (req, res) => {
     try {
-      // await Student.create({
-      //   id: req.body.userId,
-      //   password: req.body.password,
-      // });
       const foundStudent = await Student.findOne({
         where: {
           id: req.body.userId,
@@ -34,27 +30,6 @@ class StudentContoller {
     }
   };
   static freeSessions = async (req, res) => {
-    var date = moment('2023-10-20').set({ hour: 16, minute: 30 });
-
-    await Sessions.create({
-      dean_id: 'dean123',
-      availableDateTime: date,
-    });
-
-    var date = moment('2023-10-20').set({ hour: 15, minute: 30 });
-
-    await Sessions.create({
-      dean_id: 'dean123',
-      availableDateTime: date,
-    });
-
-    var date = moment('2023-10-10').set({ hour: 15, minute: 30 });
-
-    await Sessions.create({
-      dean_id: 'dean123',
-      availableDateTime: date,
-    });
-
     var date = moment('2023-10-10').set({ hour: 15, minute: 30 });
 
     await Sessions.create({

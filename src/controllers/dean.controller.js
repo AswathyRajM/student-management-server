@@ -7,10 +7,6 @@ import Student from '../models/student.model';
 class DeanController {
   static login = async (req, res) => {
     try {
-      // await Dean.create({
-      //   id: req.body.userId,
-      //   password: req.body.password,
-      // });
       const foundDean = await Dean.findOne({
         where: {
           id: req.body.userId,
