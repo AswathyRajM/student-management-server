@@ -30,12 +30,6 @@ class StudentContoller {
     }
   };
   static freeSessions = async (req, res) => {
-    var date = moment('2023-10-10').set({ hour: 15, minute: 30 });
-
-    await Sessions.create({
-      dean_id: 'dean124',
-      availableDateTime: date,
-    });
     try {
       const freeSessions = await Sessions.findAll({
         where: {
